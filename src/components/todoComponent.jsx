@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { add_todo, delete_todo, update_todo } from "../redux/actions/actionCreators";
 import { useSelector } from "react-redux";
 import { useDispatch} from "react-redux";
@@ -34,25 +34,40 @@ const TodoComponent = () => {
 
     return (
         <div>
-            <h1>Todo List</h1>
-            <h3>{update == null ? "Add Todo" : "Update Todo"}</h3>
+            <p className='italic text-6xl text-center bg-gray-800 text-white'>TODO APP</p>
+        <div className="grid grid-cols-2 gap-2 text-center bg-gray-200 min-h-lvh  " >
+            <div className='mt-10 bg-gray-300 p-4 rounded-md'>
+                <h1
+                    className='italic text-4xl mb-20 '
+                >{update == null ? "Add Todo" : "Update Todo"}</h1>
             <form onSubmit={handleSubmit}>
-                <input
+                    <input
+                        className='"grid grid-cols-3 grid-rows-3 gap-4" bg-gray-100 border-solid rounded-sm border-2 border-gray-300 hover:bg-gray-200'
+                    autoFocus
                     ref={inputRef}
                     type="text"
                     placeholder={update == null ? "Enter Todo" : "Update Todo"}
                 />
-                <button type="submit">{update == null ? "Add Todo" : "Update Todo"}</button>
-            </form>
-            <ul>
+                <button
+                        className="bg-sky-600 border-solid rounded-md border-2 border-sky-500 hover:bg-sky-500 hover:border-sky-600 ml-10"
+                    type="submit">{update == null ? "Add Todo" : "Update Todo"}</button>
+                </form>
+            </div>
+            <div className='mt-10 bg-gray-300 p-4 rounded-md'
+            >
+                <h1 className='italic text-4xl '>Todo List</h1>
+                <ul >
                 {todos && todos.map((todo) => {
                     return(
-                    <li key={todo.id}>
+                        <li className='text-2xl text-center p-2 m-2 bg-gray-500 rounded-md flex justify-between items-center'
+                            key={todo.id}>
                         {todo.task}
-                        <button
+                            <button
+                                className="bg-red-400 border-solid rounded-md border-2 border-sky-700 hover:bg-sky-500 hover:border-sky-600 ml-auto"
                         onClick={()=>dispatch(delete_todo(todo.id))}
                         >Delete</button>
-                        <button
+                            <button
+                                className="bg-green-400 border-solid rounded-md border-2 border-sky-500 hover:bg-sky-500 hover:border-sky-600"
                             onClick={() => {
                             inputRef.current.value = todo.task;
                                 setUpdate(todo);
@@ -62,7 +77,9 @@ const TodoComponent = () => {
                     )
                 }
                 )}
-            </ul>
+                </ul>
+            </div>
+            </div>
         </div>
     )
 }
