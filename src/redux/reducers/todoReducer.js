@@ -1,6 +1,12 @@
-
 import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from "../actions/actionTypes";
-const initialState = []
+
+const todosFromStorage = localStorage.getItem("todos");
+let initialState;
+try {
+    initialState = todosFromStorage ? JSON.parse(todosFromStorage) : [];
+} catch {
+    initialState = [];
+}
 
 const TodoReducer = (state = initialState, action) => {
     if (action.type == ADD_TODO) {
@@ -24,6 +30,7 @@ const TodoReducer = (state = initialState, action) => {
             })
         )
     }
+    return state
     
 }
 export default TodoReducer
