@@ -1,12 +1,31 @@
-# React + Vite
+# ✅ React Redux Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, fast, and responsive **Todo List Application** built with **React and Redux**. This app allows users to add, update, and delete todos with persistent storage using **localStorage**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ✅ Add todos
+- ♻️ Update existing todos
+- ❌ Delete todos
+- 💾 Data persists using `localStorage`
+- ⚛️ State managed using **Redux**
+- 🎯 Clean UI with Tailwind CSS
+- 🔄 Smart update handling with `useRef` and `useState`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 Concepts Used
+
+- React (Hooks: `useState`, `useRef`, `useEffect`)
+- Redux (`useSelector`, `useDispatch`)
+- Action Creators and Reducers
+- LocalStorage for persistence
+- Conditional UI rendering
+- Tailwind CSS for styling
+
+---
+
+## 📁 Folder Structure (Main Files)
+
